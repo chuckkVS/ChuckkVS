@@ -582,16 +582,129 @@ footer::before {
 }
 .back-link:hover { color: var(--cream); border-color: var(--cream); }
 
-@media (max-width: 768px) {
-  .site-header { padding: 18px 20px; flex-direction: column; align-items: flex-start; }
-  main { padding: 0 20px 60px; }
-  .dateline, .admin-bar, footer { padding-left: 20px; padding-right: 20px; }
-  .logo { font-size: 2.2rem; }
-  .empty-title { font-size: 3rem; }
-  .post-title { font-size: 2.4rem; }
-  .list-head, .list-row { grid-template-columns: 60px 1fr 60px; gap: 12px; }
+/* ── TABLET ── */
+@media (max-width: 900px) {
+  .site-header { padding: 18px 24px 14px; }
+  main { padding: 0 24px 60px; }
+  .dateline, .admin-bar, footer { padding-left: 24px; padding-right: 24px; }
+  .empty-title { font-size: 4rem; }
+  .post-title { font-size: 3rem; }
+  .form-wrap { margin: 40px 24px; padding: 28px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 700px) {
+  /* Header stacks vertically */
+  .site-header {
+    padding: 16px 18px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .header-right { align-items: flex-start; width: 100%; gap: 8px; }
+  .logo { font-size: 2.4rem; letter-spacing: -1.5px; }
+  .tagline { font-size: 0.58rem; letter-spacing: 2.5px; }
+
+  /* Nav wraps and is left-aligned */
+  nav { flex-wrap: wrap; gap: 10px 12px; }
+  nav a { font-size: 0.6rem; letter-spacing: 2px; }
+  .nav-sep { display: none; }
+
+  /* Dateline stacks instead of side-by-side */
+  .dateline {
+    padding: 8px 18px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+  .dateline span { font-size: 0.52rem; letter-spacing: 2px; }
+  .dateline .dateline-center { letter-spacing: 3px; }
+
+  /* Main + ticker */
+  main { padding: 0 18px 50px; }
+  .ticker { padding: 5px 0; }
+  .tick-item { font-size: 0.58rem; padding: 0 24px; }
+
+  /* Empty state */
+  .empty-state { padding: 70px 0 50px; }
+  .empty-state::before { top: 36px; }
+  .empty-state::after { bottom: 24px; }
+  .empty-mark { font-size: 0.55rem; letter-spacing: 4px; margin-bottom: 20px; }
+  .empty-title { font-size: 2.6rem; line-height: 0.95; letter-spacing: -1.5px; }
+  .empty-subtitle { font-size: 0.95rem; padding: 0 8px; }
+  .empty-meta { font-size: 0.55rem; gap: 10px; letter-spacing: 2px; }
+
+  /* Post list — collapse to 2 columns: case# + title/blurb */
+  .list-head {
+    grid-template-columns: 50px 1fr;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .list-row {
+    grid-template-columns: 50px 1fr;
+    gap: 12px;
+    padding: 16px 0;
+  }
+  .list-row:hover { padding-left: 0; padding-right: 0; }
+  /* Hide Category, Date, Status columns on mobile */
   .list-head > span:nth-child(3),
   .list-head > span:nth-child(4),
+  .list-head > span:nth-child(5),
   .list-row > div:nth-child(3),
-  .list-row > div:nth-child(4) { display: none; }
+  .list-row > div:nth-child(4),
+  .list-row > div:nth-child(5) { display: none; }
+  .list-title { font-size: 1.05rem; }
+  .list-blurb { font-size: 0.78rem; }
+
+  /* Post page */
+  .post-wrap { padding: 36px 0 50px; }
+  .post-title { font-size: 2.2rem; letter-spacing: -1px; line-height: 1; margin-bottom: 22px; }
+  .post-excerpt { font-size: 1rem; padding-bottom: 22px; margin-bottom: 26px; }
+  .post-body { font-size: 1rem; line-height: 1.75; }
+  .post-body h1 { font-size: 1.7rem; }
+  .post-body h2 { font-size: 1.4rem; }
+  .post-body h3 { font-size: 1.15rem; }
+  .post-body pre { padding: 14px; font-size: 0.85rem; }
+  .post-eyebrow { flex-wrap: wrap; gap: 10px; font-size: 0.55rem; }
+
+  /* Forms (login, post editor) */
+  .form-wrap {
+    margin: 24px 14px;
+    padding: 22px 18px;
+  }
+  .form-wrap h1 { font-size: 1.7rem; }
+  .field input, .field textarea, .field select { font-size: 16px; /* prevents iOS zoom on focus */ }
+  .field.editor textarea { min-height: 320px; }
+  .btn { padding: 12px 18px; font-size: 0.6rem; letter-spacing: 2px; }
+  .btn-row { gap: 8px; }
+
+  /* Admin bar */
+  .admin-bar {
+    padding: 10px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 0.55rem;
+  }
+  .admin-bar .admin-links { flex-wrap: wrap; gap: 12px; }
+
+  /* Footer */
+  footer {
+    padding: 22px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .foot-logo { font-size: 1.15rem; }
+  .foot-copy { font-size: 0.52rem; letter-spacing: 1.5px; }
+}
+
+/* ── EXTRA SMALL (iPhone SE etc) ── */
+@media (max-width: 380px) {
+  .logo { font-size: 2rem; }
+  .empty-title { font-size: 2.1rem; }
+  .post-title { font-size: 1.85rem; }
+  main { padding: 0 14px 40px; }
+  .site-header { padding: 14px 14px 12px; }
+  .form-wrap { margin: 18px 10px; padding: 18px 14px; }
 }
