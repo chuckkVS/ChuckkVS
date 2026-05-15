@@ -95,18 +95,19 @@ body::after {
 nav { display: flex; gap: 16px; align-items: center; }
 nav a {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 0.63rem;
+  font-size: 0.7rem;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--cream);
   text-decoration: none;
   transition: color 0.2s;
   background: none;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 nav a:hover { color: var(--gold); }
-.nav-sep { color: var(--border-gold); font-size: 0.45rem; }
+.nav-sep { color: var(--gold-dim); font-size: 0.5rem; }
 
 /* TICKER */
 .ticker {
