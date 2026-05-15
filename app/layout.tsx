@@ -14,7 +14,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <div className="grain" />
-        {/* @ts-expect-error Async Server Component */}
         <AdminBar />
         <SiteHeader />
         {children}
