@@ -13,13 +13,13 @@ export default function SiteHeader() {
         </div>
         <div className="header-right">
           <nav>
-            <Link href="/">Investigations</Link>
+            <Link href="/investigations">Investigations</Link>
             <span className="nav-sep">◆</span>
-            <Link href="/?category=Domestic">Domestic</Link>
+            <Link href="/domestic">Domestic</Link>
             <span className="nav-sep">◆</span>
-            <Link href="/?category=International">International</Link>
+            <Link href="/international">International</Link>
             <span className="nav-sep">◆</span>
-            <Link href="/">Archive</Link>
+            <Link href="/archive">Archive</Link>
             <span className="nav-sep">◆</span>
             <Link href="/about">About</Link>
           </nav>
